@@ -276,20 +276,19 @@ The engineering pipeline combines performance-focused open-source core libraries
 - [x] HF_TOKEN added to GitHub Secrets
 - [x] Hugging Face Space created
 - [] Pipeline executed successfully
-- [ ] Screenshots of:
+- [x] Screenshots of:
   - GitHub repository structure
+    - <img width="666" height="898" alt="image" src="https://github.com/user-attachments/assets/996dd038-a14c-4fc8-ad79-09c5b33a87f9" />
+
   - GitHub Actions workflow execution
+    - <img width="2400" height="514" alt="image" src="https://github.com/user-attachments/assets/dfcc3bbe-c466-48df-817b-a13e9f4c5fae" />
+
   - Deployed Streamlit app on Hugging Face
-
-## 📸 Output Requirements
-
-### 1. GitHub Repository
-- Screenshot showing folder structure
-- Screenshot showing successful workflow execution
-
-### 2. Hugging Face Space
-- Link to deployed application
-- Screenshot of the Streamlit app in action
+    - <img width="2936" height="1656" alt="image" src="https://github.com/user-attachments/assets/3e6c8a35-c671-4582-a2d6-476a1f3ae17d" />
+  
+  - Output after click
+    - <img width="2892" height="850" alt="image" src="https://github.com/user-attachments/assets/8be3c9bb-1df5-4cc3-9cb0-1f00388a90ad" />
+ 
 
 ## 🔍 Troubleshooting
 
