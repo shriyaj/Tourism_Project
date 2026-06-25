@@ -1,13 +1,4 @@
 import os
-import sys
-try:
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-except NameError:
-    current_dir = os.getcwd()
-root_dir = os.path.dirname(current_dir)
-if root_dir not in sys.path:
-    sys.path.insert(0, root_dir)
-
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -25,7 +16,9 @@ from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError
 import mlflow
 import multiprocessing
-from hf_credentials import HF_USERNAME
+HF_USERNAME = os.getenv("HF_USERNAME")
+HF_TOKEN = os.getenv("HF_TOKEN")
+
 os.environ["PYTHONWARNINGS"] = "ignore"  
 # Initialize MLflow tracking server configurations
 mlflow.set_tracking_uri("http://localhost:5050")

@@ -1,17 +1,4 @@
 import os
-import sys
-
-# Get the absolute path of the subfolder
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Get the path of the root directory (one level up)
-root_dir = os.path.dirname(current_dir)
-
-# Add root to sys.path if it is not already there
-if root_dir not in sys.path:
-    sys.path.insert(0, root_dir)
-
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -22,7 +9,9 @@ import pandas as pd
 import numpy as np
 from huggingface_hub import hf_hub_download
 import joblib
-from hf_credentials import HF_USERNAME, HF_TOKEN
+
+HF_USERNAME = os.getenv("HF_USERNAME")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 # Set responsive layout properties and dashboard metadata
 st.set_page_config(

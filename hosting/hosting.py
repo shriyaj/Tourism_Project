@@ -1,21 +1,10 @@
 import os
-import sys
-
-try:
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-except:
-    current_dir = os.getcwd()
-
-# Get the path of the root directory (one level up)
-root_dir = os.path.dirname(current_dir)
-
-# Add root to sys.path if it is not already there
-if root_dir not in sys.path:
-    sys.path.insert(0, root_dir)
-
 from huggingface_hub import HfApi, create_repo, login
 import os
-from hf_credentials import HF_USERNAME, HF_TOKEN
+
+HF_USERNAME = os.getenv("HF_USERNAME")
+HF_TOKEN = os.getenv("HF_TOKEN")
+
 
 login(HF_TOKEN)
 api = HfApi()

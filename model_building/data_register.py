@@ -1,36 +1,14 @@
 import os
-import sys
-
-try:
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-except NameError:
-    current_dir = os.getcwd()
-
-root_dir = os.path.dirname(current_dir)
-if root_dir not in sys.path:
-    sys.path.insert(0, root_dir)
-
-import importlib
 from huggingface_hub import login, HfApi, create_repo
-import hf_credentials 
 
-# Force-reload credentials file to capture recent token changes
-importlib.reload(hf_credentials)
+HF_USERNAME = os.getenv("HF_USERNAME")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
-# Resolve absolute paths and append root directory to system path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-root_dir = os.path.dirname(current_dir)
-
-if root_dir not in sys.path:
-    sys.path.insert(0, root_dir)
-
-# Configure Hugging Face repository identifiers
-HF_USER = hf_credentials.HF_USERNAME
-REPO_ID = f"{HF_USER}/tourism-dataset"
+REPO_ID = f"{HF_USERNAME}/tourism-dataset"
 LOCAL_DATA_DIR = "tourism_project/data"
 
 # Authenticate session
-login(token=hf_credentials.HF_TOKEN)
+login(token=HF_TOKEN)
 
 # Initialize or verify target dataset repository
 try:
