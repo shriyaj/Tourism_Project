@@ -9,6 +9,7 @@ jobs:
 
   register-dataset:
     runs-on: ubuntu-latest
+    environment: HF
     steps:
       - uses: actions/checkout@v4
       - name: Install Dependencies
